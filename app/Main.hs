@@ -302,7 +302,7 @@ updatePlayerPosition :: Player -> GameState -> Float -> GameState
 updatePlayerPosition player game delta =
   let (x, y) = position player
       screenLimit = fromIntegral windowWidth / 2
-      margin = 0.2 * screenLimit -- Reduzindo o limite em 10% para cada jogador
+      margin = 0.2* screenLimit -- Reduzindo o limite em 10% para cada jogador
       newX = if isActive (player1 game)
                then clamp (x + delta) (-screenLimit + 30) (-margin) -- Limite para o Player 1
                else clamp (x + delta) margin (screenLimit - 30) -- Limite para o Player 2
